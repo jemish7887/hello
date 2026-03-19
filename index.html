@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiladiCode</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <div class="container">
+        <video class="back-vid" autoplay loop muted playsinline src="videos/galaxy.mp4"></video>
+
+        <header data-aos="fade-down" data-aos-duration="2000">
+            <div class="left">
+                
+                <h2><span style="color: #72a1dea2;">JemishChudal</span></h2>
+            </div>
+            <ul>
+                <li><a href="#about-section" class="nav-link">About</a></li>
+                <li><a href="#skills-section" class="nav-link">Skills</a></li>
+                <li><a href="#projects-section" class="nav-link">Projects</a></li>
+            </ul>
+            <div class="box-icons">
+                <p><i class='bx bxl-youtube'></i></p>
+                <p><i class='bx bxl-github'></i></p>
+                <p><i class='bx bxl-linkedin-square'></i></p>
+            </div>
+            <div class="menu-icon">
+                <i class='bx bx-menu'></i>
+            </div>
+        </header>
+
+        <div class="sidebar">
+            <div class="close-icon"><i class='bx bx-x'></i></div>
+            <ul>
+                <li><a href="#hero-section" class="nav-link">Home</a></li>
+                <li><a href="#about-section" class="nav-link">About</a></li>
+                <li><a href="#skills-section" class="nav-link">Skills</a></li>
+                <li><a href="#projects-section" class="nav-link">Projects</a></li>
+            </ul>
+            <div class="social-sidebar">
+                <a><i class='bx bxl-youtube'></i></a>
+                <a><i class='bx bxl-github'></i></a>
+                <a><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+        </div>
+
+        <div class="blackhole-box" data-aos="fade-down" data-aos-duration="2000">
+            <video autoplay loop muted playsinline src="videos/blackhole.mp4"></video>
+        </div>
+
+        <section class="hero" id="hero-section">
+            <div class="hero-info autoBlur" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-info-title">
+                    <i class='bx bxl-sketch'></i>
+                    Front-end Developer Portfolio
+                </div>
+                <h1 data-aos="fade-right" data-aos-duration="3000">Providing <span class="gradient">the best</span> Project <span class="gradient">Experience</span></h1>
+                <p>I'm a front-end developer with experience in Website, Mobile and Software development. Check out my projects and skills.</p>
+               <button style="position:relative; z-index:10;" onclick="smoothScrollTo('#contact-section')"><i class='bx bx-send'></i> Contact Me</button>
+            </div>
+            <div class="skills-video-box">
+                <video class="skills-video autoBlur" autoplay loop muted playsinline src="videos/hero-video.mp4"></video>
+            </div>
+            <div class="scroll-down"></div>
+        </section>
+
+        <seaction class="info-section" id="about-section">
+            <h1 class="section-title autoDisplay">Hello, There👋</h1>
+            <div class="info-cards">
+                <div class="card profile-card">
+                    <div class="profile-bg-glow"></div>
+                    <div class="profile-photo-wrap">
+                        <img src="images/profile.jpeg" alt="Jemish Chudal" class="profile-photo">
+                        <div class="profile-glow-ring"></div>
+                        <div class="profile-glow-ring2"></div>
+                    </div>
+                    <h1 class="profile-name">Hi, I'm<br><span class="gradient">Jemish Chudal</span></h1>
+                    <p> I have honed my skills in both frontend and backend dev, creating dynamic and responsive websites.</p>
+                    <div class="profile-tags">
+                        <span>Frontend Dev</span>
+                        <span>Full Stack</span>
+                        <span>Open to Work</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h1>Tech Stack</h1>
+                    <p>I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications.</p>
+                    <img src="images/grid2.png" alt="">
+                </div>
+                <div class="card">
+                    <h1>I'm very flexible with time zone communications & locations</h1>
+                    <p>I'm based in Nepal, Jhapa and open to remote work .</p>
+                    <video src="videos/glob.mp4" autoplay loop muted playsinline></video>
+<button><i class='bx bx-send'></i> Contact Me</button>
+                </div>
+                <div class="card">
+                    <h1>My Passion for Coding</h1>
+                    <p>I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies, and enhancing my skills.</p>
+                    <img src="images/grid4.png" alt="">
+                </div>
+            </div>
+        </seaction>
+
+        <section class="my-project" id="projects-section">
+            <h1 class="section-title autoDisplay">My Projects 👨‍💻</h1>
+
+            <!-- PROJECT 1: Ride Sharing App -->
+            <div class="project-card">
+                <div class="project-vidbox autoBlur">
+                    <!-- Interactive Map Visual -->
+                    <div class="proj-visual" id="visual1">
+                        <div class="map-grid"></div>
+                        <svg class="map-roads" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="80" x2="500" y2="80" stroke="#1a3a5c" stroke-width="10"/>
+                            <line x1="0" y1="180" x2="500" y2="180" stroke="#1a3a5c" stroke-width="10"/>
+                            <line x1="0" y1="240" x2="500" y2="240" stroke="#1a3a5c" stroke-width="6"/>
+                            <line x1="100" y1="0" x2="100" y2="300" stroke="#1a3a5c" stroke-width="10"/>
+                            <line x1="250" y1="0" x2="250" y2="300" stroke="#1a3a5c" stroke-width="10"/>
+                            <line x1="400" y1="0" x2="400" y2="300" stroke="#1a3a5c" stroke-width="10"/>
+                            <line x1="0" y1="80" x2="500" y2="80" stroke="#72a1de20" stroke-width="1" stroke-dasharray="12,8"/>
+                            <line x1="0" y1="180" x2="500" y2="180" stroke="#72a1de20" stroke-width="1" stroke-dasharray="12,8"/>
+                            <!-- Route -->
+                            <polyline points="100,180 250,180 250,80 400,80" stroke="#72a1de" stroke-width="3" fill="none" stroke-dasharray="10,5" class="route-line"/>
+                            <!-- Glow route -->
+                            <polyline points="100,180 250,180 250,80 400,80" stroke="#72a1de40" stroke-width="8" fill="none"/>
+                            <!-- Pickup -->
+                            <circle cx="100" cy="180" r="7" fill="#00ff88"/>
+                            <circle cx="100" cy="180" r="14" fill="none" stroke="#00ff88" stroke-width="2" class="pulse-ring"/>
+                            <circle cx="100" cy="180" r="22" fill="none" stroke="#00ff8840" stroke-width="1" class="pulse-ring2"/>
+                            <!-- Dropoff -->
+                            <circle cx="400" cy="80" r="7" fill="#ff4466"/>
+                            <circle cx="400" cy="80" r="14" fill="none" stroke="#ff4466" stroke-width="2" class="pulse-ring3"/>
+                            <!-- Other cars -->
+                            <circle cx="160" cy="80" r="5" fill="#72a1de80"/>
+                            <circle cx="320" cy="180" r="5" fill="#72a1de80"/>
+                        </svg>
+                        <div class="car-icon" id="rideCar">🚗</div>
+                        <div class="map-stats">
+                            <div class="stat-pill"><span class="sdot green"></span>Driver found</div>
+                            <div class="stat-pill"><span class="sdot blue"></span>ETA 3 min</div>
+                        </div>
+                        <div class="map-label pickup-label">📍 Pickup</div>
+                        <div class="map-label dropoff-label">🏁 Drop-off</div>
+                        <div class="map-fare">$8.40 <span>est.</span></div>
+                    </div>
+                </div>
+                <div class="project-info fadein-left">
+                    <div class="proj-tag">MERN Stack</div>
+                    <h1>Ride <span class="gradient">Sharing</span> App</h1>
+                    <p>A full-stack ride-hailing platform built with MongoDB, Express, React and Node.js. Features real-time driver tracking, booking management, and live route navigation.</p>
+                    <div class="proj-tech-pills">
+                        <span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span><span>Socket.io</span>
+                    </div>
+                    <a href="https://github.com/jemish7887/ridesharingapp" target="_blank"><button><i class='bx bx-link-external'></i> View on GitHub</button></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: Heart Disease Prediction -->
+            <div class="project-card">
+                <div class="project-vidbox autoBlur">
+                    <div class="proj-visual" id="visual2">
+                        <!-- ECG line -->
+                        <div class="ecg-container">
+                            <svg viewBox="0 0 500 80" class="ecg-svg" preserveAspectRatio="none">
+                                <polyline class="ecg-line" points="0,40 60,40 70,40 78,8 83,72 88,40 140,40 150,40 158,12 163,68 168,40 220,40 230,40 238,10 243,70 248,40 300,40 310,40 318,8 323,72 328,40 380,40 390,40 398,12 403,68 408,40 500,40"/>
+                            </svg>
+                            <div class="ecg-scan"></div>
+                        </div>
+                        <!-- Neural network -->
+                        <div class="neural-wrap">
+                            <svg class="neural-svg" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" id="neuralSvg"></svg>
+                            <!-- Input labels -->
+                            <div class="n-label" style="top:12%;left:1%">Age</div>
+                            <div class="n-label" style="top:30%;left:1%">BP</div>
+                            <div class="n-label" style="top:48%;left:1%">Chol</div>
+                            <div class="n-label" style="top:66%;left:1%">HR</div>
+                            <div class="n-label" style="top:84%;left:1%">ECG</div>
+                            <!-- Nodes input -->
+                            <div class="n-node inp-n" style="top:12%;left:10%"></div>
+                            <div class="n-node inp-n" style="top:30%;left:10%"></div>
+                            <div class="n-node inp-n" style="top:48%;left:10%"></div>
+                            <div class="n-node inp-n" style="top:66%;left:10%"></div>
+                            <div class="n-node inp-n" style="top:84%;left:10%"></div>
+                            <!-- Hidden layer 1 -->
+                            <div class="n-node hid-n" style="top:8%;left:35%"></div>
+                            <div class="n-node hid-n" style="top:24%;left:35%"></div>
+                            <div class="n-node hid-n" style="top:40%;left:35%"></div>
+                            <div class="n-node hid-n" style="top:56%;left:35%"></div>
+                            <div class="n-node hid-n" style="top:72%;left:35%"></div>
+                            <div class="n-node hid-n" style="top:88%;left:35%"></div>
+                            <!-- Hidden layer 2 -->
+                            <div class="n-node hid-n" style="top:16%;left:60%"></div>
+                            <div class="n-node hid-n" style="top:36%;left:60%"></div>
+                            <div class="n-node hid-n" style="top:56%;left:60%"></div>
+                            <div class="n-node hid-n" style="top:76%;left:60%"></div>
+                            <!-- Output -->
+                            <div class="n-node out-n" style="top:40%;left:84%"></div>
+                            <div class="n-label out-label" style="top:40%;left:88%">Risk</div>
+                        </div>
+                        <!-- Risk meter -->
+                        <div class="risk-meter">
+                            <div class="risk-bar-wrap">
+                                <div class="risk-bar" id="riskBar"></div>
+                            </div>
+                            <div class="risk-label">Risk: <span id="riskPct">23%</span> — <span id="riskText" class="low-risk">Low</span></div>
+                        </div>
+                        <!-- Heart icon -->
+                        <div class="heart-icon" id="heartIcon">🫀</div>
+                    </div>
+                </div>
+                <div class="project-info fadein-left">
+                    <div class="proj-tag">Python · ML</div>
+                    <h1>Heart Disease <span class="gradient">Prediction</span></h1>
+                    <p>A machine learning model that predicts heart disease risk using patient vitals and clinical data. Built with Python, scikit-learn, and a neural network trained on clinical datasets.</p>
+                    <div class="proj-tech-pills">
+                        <span>Python</span><span>scikit-learn</span><span>Neural Net</span><span>Pandas</span><span>Flask</span>
+                    </div>
+                    <a href="https://github.com/jemish7887/heart-disease-predictor" target="_blank"><button><i class='bx bx-link-external'></i> View on GitHub</button></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 3: SignalR Chat -->
+            <div class="project-card">
+                <div class="project-vidbox autoBlur">
+                    <div class="proj-visual" id="visual3">
+                        <div class="chat-ui">
+                            <div class="chat-header-bar">
+                                <div class="chat-avatar-sm">JC</div>
+                                <div class="chat-info">
+                                    <div class="chat-title">Dev Team Chat</div>
+                                    <div class="chat-status"><span class="online-dot"></span> 3 members online</div>
+                                </div>
+                                <div class="signal-badge">SignalR</div>
+                            </div>
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="chat-msg left">
+                                    <div class="msg-av">A</div>
+                                    <div class="msg-content"><span class="msg-name">Alex</span><div class="bubble left-b">Hey, pushed the auth fix 🔥</div></div>
+                                </div>
+                                <div class="chat-msg right">
+                                    <div class="msg-content"><div class="bubble right-b">Merged! Deploying now 🚀</div></div>
+                                </div>
+                                <div class="chat-msg left">
+                                    <div class="msg-av">S</div>
+                                    <div class="msg-content"><span class="msg-name">Sara</span><div class="bubble left-b">SignalR real-time is ✅</div></div>
+                                </div>
+                                <div class="chat-msg right">
+                                    <div class="msg-content"><div class="bubble right-b">Let's ship it! 💯</div></div>
+                                </div>
+                            </div>
+                            <div class="typing-bar" id="typingBar">
+                                <span class="typing-dots"><span></span><span></span><span></span></span>
+                                <span class="typing-text">Sara is typing...</span>
+                            </div>
+                            <div class="chat-input-row">
+                                <div class="chat-fake-input" id="fakeInput">|</div>
+                                <div class="chat-send-btn">
+                                    <i class='bx bx-send'></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Connection lines -->
+                        <div class="conn-nodes">
+                            <div class="conn-node" style="top:5%;right:5%">
+                                <div class="conn-pulse"></div>
+                            </div>
+                            <div class="conn-node" style="top:20%;right:2%">
+                                <div class="conn-pulse"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info fadein-left">
+                    <div class="proj-tag">.NET · SignalR</div>
+                    <h1>SignalR <span class="gradient">Real-Time</span> Chat</h1>
+                    <p>A real-time chat application built with ASP.NET Core and SignalR. Features instant messaging, live user presence, typing indicators, and persistent message history.</p>
+                    <div class="proj-tech-pills">
+                        <span>.NET Core</span><span>SignalR</span><span>C#</span><span>WebSockets</span><span>SQL Server</span>
+                    </div>
+                    <a href="https://github.com/jemish7887/SIngnalr-demo-chat-app" target="_blank"><button><i class='bx bx-link-external'></i> View on GitHub</button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section" id="skills-section">
+            <h1 class="section-title autoDisplay">My Skills 💪</h1>
+            <div class="skills-box autoDisplay">
+                <img class="skills-image" src="images/digital brain (2).png" alt="">
+                <div class="Designer">
+                    <h1 class="gradient">Designer <i class='bx bx-laptop'></i></h1>
+                    <p>I have expertise in HTML, CSS, JavaScript, and design tools like Figma and Adobe XD. My strength lies in blending aesthetics with functionality to create seamless user experiences.</p>
+                </div>
+                <div class="coder">
+                    <h1 class="gradient">Coder <i class='bx bx-code-block'></i></h1>
+                    <p>I'm skilled in HTML, CSS, JavaScript, and frameworks like React and Node.js. I also have experience with database management using MongoDB and MySQL.</p>
+                </div>
+                <div class="slider" reverse="true" style="--width: 100px; --height: 100px; --quantity: 9;">
+                    <div class="list">
+                        <div class="item" style="--position: 1"><img src="images/1.png" alt=""></div>
+                        <div class="item" style="--position: 2"><img src="images/2.png" alt=""></div>
+                        <div class="item" style="--position: 3"><img src="images/3.webp" alt=""></div>
+                        <div class="item" style="--position: 4"><img src="images/4.webp" alt=""></div>
+                        <div class="item" style="--position: 5"><img src="images/5.png" alt=""></div>
+                        <div class="item" style="--position: 6"><img src="images/6.png" alt=""></div>
+                        <div class="item" style="--position: 7"><img src="images/7.png" alt=""></div>
+                        <div class="item" style="--position: 8"><img src="images/8.png" alt=""></div>
+                        <div class="item" style="--position: 9"><img src="images/9.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact-section">
+            <h1 class="section-title autoDisplay">Let's talk😊</h1>
+            <div class="social-box autoBlur">
+                <a href="#"><i class='bx bxs-phone'></i> +977 9817975099</a>
+                <a href="#"><i class='bx bxl-telegram'></i> jemishchudal@gmail.com</a>
+                <a href="#"><i class='bx bxl-linkedin-square'></i> jemish-chudal-221588320</a>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+            <div class="contact-box autoBlur">
+                <p>Whether you're looking to build a new website, improve your existing platform, or bring a unique project to life. I'm here to help.</p>
+                <p>Full Name</p>
+                <input placeholder="Your Full Name" type="text">
+                <p>Email Address</p>
+                <input placeholder="Your Email" type="email">
+                <p>Your Message</p>
+                <input class="input-message" type="text" placeholder="Share your thoughts...">
+                <button>Send Message <i class='bx bx-mail-send'></i></button>
+            </div>
+        </section>
+
+    </div>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="projects.js"></script>
+</body>
+</html>
