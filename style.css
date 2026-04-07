@@ -1377,7 +1377,8 @@ header ul a.nav-link:hover::after { width:100%; }
  
     .profile-photo-wrap {
         margin-left: auto !important;
-        margin-right: auto !important;
+        margin-right: auto !important;  
+        
         display: block;
     }
  
