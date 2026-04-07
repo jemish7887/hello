@@ -1367,4 +1367,57 @@ header ul a.nav-link:hover::after { width:100%; }
     .left h2 { font-size: 15px; }
     .proj-visual { height: 200px; }
     .social-box a { font-size: 12px; }
+} 
+@media screen and (max-width: 768px) {
+    .profile-card {
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+ 
+    .profile-photo-wrap {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block;
+    }
+ 
+    .profile-name {
+        text-align: center !important;
+        width: 100% !important;
+    }
+ 
+    .profile-card p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+ 
+    .profile-tags {
+        justify-content: center !important;
+        width: 100%;
+    }
+}
+ 
+/* ── FIX 2: Blackhole centered on all mobile sizes ── */
+@media screen and (max-width: 480px) {
+    .blackhole-box {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+ 
+    .blackhole-box video {
+        /* Reset the offset that was pushing it left */
+        width: 220% !important;
+        margin-left: -60% !important;
+        margin-top: -30% !important;
+    }
+}
+ 
+@media screen and (max-width: 360px) {
+    .blackhole-box video {
+        width: 240% !important;
+        margin-left: -70% !important;
+        margin-top: -35% !important;
+    }
 }
