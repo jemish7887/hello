@@ -126,18 +126,25 @@ header ul a:hover {
     box-shadow: 0 0 20px var(--blue-glow);
     transform: translateY(-2px);
 }
+
 /* =============================================
    BLACKHOLE
    ============================================= */
 .blackhole-box {
     position: absolute;
-    top: 0; width: 100%;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     z-index: -1;
     mix-blend-mode: lighten;
+    overflow: hidden;
 }
-.blackhole-box video { width: 100%; margin-top: -23.5%; }
+.blackhole-box video {
+    width: 100%;
+    margin-top: -23.5%;
+}
 
 /* =============================================
    HERO
@@ -1155,17 +1162,26 @@ header ul a.nav-link:hover::after { width:100%; }
     header .box-icons { display: none; }
     .menu-icon { display: inline; }
 
-    /* Blackhole */
-    .blackhole-box video { width: 100%; margin-top: -10%; }
-    .blackhole-box { overflow: hidden; }
+    /* ── BLACKHOLE FIX: perfectly centered, no offset ── */
+    .blackhole-box {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .blackhole-box video {
+        width: 160%;
+        margin-left: 0 !important;
+        margin-top: -15%;
+    }
 
-    /* Hero */
     .hero {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         padding: 0 20px;
-        height: 100svh;
+        min-height: 100svh;
+        padding-bottom: 40px; /* added a tiny bit of breathing room at the bottom */
     }
     .hero-info {
         position: relative;
@@ -1175,7 +1191,19 @@ header ul a.nav-link:hover::after { width:100%; }
     .hero-info h1 { font-size: 38px; line-height: 46px; max-width: 100%; }
     .hero-info p  { font-size: 14px; max-width: 100%; }
     .hero-info .hero-info-title { font-size: 11px; }
-    .skills-video-box { display: none; }
+    
+    .skills-video-box {
+        position: relative;
+        right: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .skills-video {
+        height: 220px; /* Reduced so it doesn't overflow the screen height */
+    }
+
     .scroll-down { left: 46%; bottom: 5%; }
 
     /* Disable heavy scroll animations on mobile */
@@ -1185,16 +1213,22 @@ header ul a.nav-link:hover::after { width:100%; }
     .info-section { width: 94%; margin-top: 60px; }
     .section-title { font-size: 34px; }
 
-    /* Cards: single column */
+    /* ── PROFILE CARD FIX: reset all conflicts ── */
     .info-cards {
         display: flex;
         flex-direction: column;
         gap: 16px;
     }
+
+    /* Reset every card to natural flow */
     .card {
         height: auto !important;
         min-height: 280px;
+        width: 100% !important;
+        grid-column: unset !important;
+        grid-row: unset !important;
     }
+
     .card h1 { font-size: 18px; bottom: auto; top: 16px; left: 16px; }
     .card p  { bottom: 16px; left: 16px; right: 16px; max-width: 100%; }
     .card img {
@@ -1209,7 +1243,8 @@ header ul a.nav-link:hover::after { width:100%; }
         margin-top: 60px;
     }
     .card button { bottom: 16px; left: 16px; }
-    /* Reset span overrides for grid */
+
+    /* Reset span overrides from desktop grid */
     .card:nth-child(3),
     .card:nth-child(4) {
         grid-column: span 1 !important;
@@ -1221,13 +1256,69 @@ header ul a.nav-link:hover::after { width:100%; }
     .card:nth-child(3) p,
     .card:nth-child(4) p  { bottom: 16px; max-width: 100%; }
 
-    /* Profile card on mobile */
-    .profile-card {
-        min-height: 400px !important;
-        padding: 28px 20px 24px !important;
+    /* ── PROFILE CARD: fully centered, no floating ── */
+    .card:nth-child(1) {
+        height: auto !important;
+        min-height: unset !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
-    .profile-photo-wrap { width: 160px; height: 160px; }
-    .profile-photo { width: 160px !important; height: 160px !important; }
+
+    .profile-card {
+        width: 100% !important;
+        height: auto !important;
+        min-height: unset !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 36px 24px !important;
+        gap: 0 !important;
+    }
+
+    .profile-bg-glow {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .profile-photo-wrap {
+        width: 160px !important;
+        height: 160px !important;
+        margin: 0 auto 20px auto !important;
+        display: block !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    .profile-photo {
+        width: 160px !important;
+        height: 160px !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+
+    .profile-name {
+        position: static !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 0 10px 0 !important;
+    }
+
+    .profile-card p {
+        position: static !important;
+        text-align: center !important;
+        margin: 0 auto 16px auto !important;
+        max-width: 260px !important;
+    }
+
+    .profile-tags {
+        justify-content: center !important;
+        width: 100%;
+    }
 
     /* Projects */
     .my-project {
@@ -1320,8 +1411,18 @@ header ul a.nav-link:hover::after { width:100%; }
     .hero-info button { padding: 11px 22px; font-size: 13px; }
     .scroll-down { display: none; }
 
-    /* Blackhole tighter */
-    .blackhole-box video { width: 160%; margin-left: -30%; margin-top: -25%; }
+    /* ── BLACKHOLE FIX for small phones ── */
+    .blackhole-box {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .blackhole-box video {
+        width: 200% !important;
+        margin-left: 0 !important;
+        margin-top: -25% !important;
+    }
 
     /* Section titles */
     .section-title { font-size: 26px; }
@@ -1330,10 +1431,24 @@ header ul a.nav-link:hover::after { width:100%; }
     .info-section { width: 96%; margin-top: 40px; }
     .card { min-height: 240px; }
     .card h1 { font-size: 16px; }
-    .profile-photo-wrap { width: 130px; height: 130px; }
-    .profile-photo { width: 130px !important; height: 130px !important; }
+
+    /* Profile card on small phones */
+    .card:nth-child(1) {
+        min-height: unset !important;
+    }
+    .profile-card {
+        min-height: unset !important;
+        padding: 28px 20px 28px !important;
+    }
+    .profile-photo-wrap {
+        width: 130px !important;
+        height: 130px !important;
+    }
+    .profile-photo {
+        width: 130px !important;
+        height: 130px !important;
+    }
     .profile-name { font-size: 20px !important; }
-    .profile-card { min-height: 340px !important; }
 
     /* Projects */
     .my-project { width: 96%; gap: 48px; margin-bottom: 60px; }
@@ -1367,58 +1482,11 @@ header ul a.nav-link:hover::after { width:100%; }
     .left h2 { font-size: 15px; }
     .proj-visual { height: 200px; }
     .social-box a { font-size: 12px; }
-} 
-@media screen and (max-width: 768px) {
-    .profile-card {
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-    }
- 
-    .profile-photo-wrap {
-        margin-left: auto !important;
-        margin-right: auto !important;  
-        
-        display: block;
-    }
- 
-    .profile-name {
-        text-align: center !important;
-        width: 100% !important;
-    }
- 
-    .profile-card p {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
- 
-    .profile-tags {
-        justify-content: center !important;
-        width: 100%;
-    }
-}
- 
-/* ── FIX 2: Blackhole centered on all mobile sizes ── */
-@media screen and (max-width: 480px) {
-    .blackhole-box {
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-    }
- 
+
+    /* ── BLACKHOLE FIX for tiny phones ── */
     .blackhole-box video {
-        /* Reset the offset that was pushing it left */
         width: 220% !important;
-        margin-left: -60% !important;
-        margin-top: -30% !important;
-    }
-}
- 
-@media screen and (max-width: 360px) {
-    .blackhole-box video {
-        width: 240% !important;
-        margin-left: -70% !important;
+        margin-left: 0 !important;
         margin-top: -35% !important;
     }
 }
