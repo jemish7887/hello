@@ -116,3 +116,83 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav, { passive: true });
 updateActiveNav();
+
+// =============================================
+// WEB3FORMS CONTACT FORM
+// =============================================
+
+const WEB3FORMS_ACCESS_KEY = "7568d170-9d57-4f92-b54a-244d64ec75f5";
+
+async function sendEmail() {
+    const name    = document.getElementById("from_name").value.trim();
+    const email   = document.getElementById("reply_to").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const btn     = document.getElementById("send-btn");
+
+    // Basic validation
+    if (!name || !email || !message) {
+        alert("Please fill in all fields! ✏️");
+        return;
+    }
+
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address! 📧");
+        return;
+    }
+
+    // Button loading state
+    btn.disabled = true;
+    btn.innerHTML = "Sending... <i class='bx bx-loader-alt bx-spin'></i>";
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                access_key: WEB3FORMS_ACCESS_KEY,
+                name: name,
+                email: email,
+                message: message,
+                // Optional: customize the subject line of the email you receive
+                subject: `New message from ${name} via Portfolio`
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            btn.innerHTML = "Sent! ✅ <i class='bx bx-check'></i>";
+            btn.style.background = "#28a745";
+
+            // Clear the fields
+            document.getElementById("from_name").value = "";
+            document.getElementById("reply_to").value  = "";
+            document.getElementById("message").value   = "";
+
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = "Send Message <i class='bx bx-mail-send'></i>";
+                btn.style.background = "";
+            }, 3000);
+        } else {
+            throw new Error(data.message || "Submission failed");
+        }
+
+    } catch (error) {
+        console.error("Web3Forms error:", error);
+        btn.innerHTML = "Failed ❌ Try Again";
+        btn.style.background = "#dc3545";
+        btn.disabled = false;
+
+        setTimeout(() => {
+            btn.innerHTML = "Send Message <i class='bx bx-mail-send'></i>";
+            btn.style.background = "";
+        }, 3000);
+    }
+}
